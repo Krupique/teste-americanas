@@ -12,20 +12,30 @@ from sklearn.metrics import accuracy_score, f1_score
 class Preditor:
 
     def __init__(self, lista_dados, atributoTarget):
-        self.lista_dados = self._transformarDados(lista_dados)
         self.atributoTarget = atributoTarget
+        self.lista_dados = self._transformarDados(lista_dados)
 
 
     def _transformarDados(self, lista_dados):
         df = pd.DataFrame(lista_dados[1:], columns=lista_dados[0])
-
         df.dropna(inplace=True)
-        self.target = df['target'].astype(float).values
 
-        df.drop(columns=['target', 'feature6', 'feature7', 'feature9', 'feature12', 'feature14'], inplace=True)
+        if self.atributoTarget == 'yes':
+            self.target = df['target'].astype(float).values
+            colunas_drop = ['target', 'feature6', 'feature7', 'feature9', 'feature12', 'feature14']
+
+        else:
+            colunas_drop = ['feature6', 'feature7', 'feature9', 'feature12', 'feature14']
+            if 'target' in df:
+                colunas_drop.append('target')
+
+
+        df.drop(columns=colunas_drop, inplace=True)
 
         for column in df:
             df[column] = df[column].astype(float)
+
+            
 
         return df.values
         

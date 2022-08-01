@@ -15,14 +15,16 @@
 
 <body>
     <section class="secTitle">
-        <div>
+        <div class="divTitleAbout">
             <p>Teste Técnico - Americanas SA</p>
         </div>
     </section>
 
     <section class="secBody">
         <div class="container">
-
+            <div style="text-align: center;">
+                <div class="separator_black">Carregamento dos Dados</div><br/>
+            </div>
             <div id="divUpload">
 
 
@@ -50,9 +52,8 @@
                 </div>
             </div>
 
-            <hr/>
             <div style="text-align: center;">
-                <p>Tabela com os Dados</p>
+                <div class="separator_black">Tabela com os Dados</div><br/>
             </div>
 
             <div id="divTable">
@@ -60,9 +61,8 @@
             </div>
 
 
-            <hr/>
             <div style="text-align: center;">
-                <p>Opções de Testagem</p>
+                <div class="separator_black">Opções de Testagem</div><br/>
             </div>
 
             <div id="divTest">
@@ -90,6 +90,66 @@
                 </div>
 
             </div>
+
+        </div>
+    </section>
+
+    <section class="secRepositorio">
+        <div class="container">
+            <div class="divTitleAbout">
+                <p>Repositório do Projeto</p>
+            </div>
+
+            <p>
+                Toda a análise, explicação e detalhes sobre o desenvolvimento do projeto pode ser encontrado no Repositório neste link:
+                <a target="_blank" href="https://github.com/Krupique/teste-americanas">Repositório</a>
+            </p>
+
+        </div>
+    </section>
+
+    <section class="secAbout">
+        <div class="container">
+
+            <div class="divTitleAbout">
+                <p>Orientações sobre o projeto</p>
+            </div>
+
+
+            <div class="separator_black">Como executar o projeto</div><br/>
+
+
+            <p>Orientações de Uso: Você tem duas opções para carregar os dados:</p>
+            <ul>
+                <li>A primeira é colar os dados diretamente no campo de texto;</li>
+                <li>A segunda é carregar um arquivo .CSV diretamente da sua máquina;</li>
+
+            </ul>
+
+            <p>
+                Em ambos os casos é necessário que o arquivo tenha a seguinte estrutura: A primeira linha precisar ser o nome das colunas: Exemplo: feature0, feature1, ..., feature15, target.
+            </p>
+            <p>
+                O arquivo precisa estar separado por , ou ; Ao executar o projeto, ele vai exibir os resultados com as métricas de avaliação Acurácia e F1-Score e em seguida realizar o download de um arquivo .csv contendo as previsões.
+            </p>
+
+
+
+            <div class="separator_black">Como visualizar as análises</div><br/>
+
+            <p>
+                As análises realizadas, explicações de conceitos e metodologia utilizada para o desenvolvimento podem ser visualizadas no diretório(pasta) notebook/:
+            </p>
+            <ul>
+                <li>00 - analise.ipynb: Contém a análise exploratória e estatística inicial do proejeto;</li>
+                <li>01 - preparacao.ipynb: Contém o pré-processamento dos dados, tratamento de outliers, feature selection, modelagem, avaliação dos resultados e deploy do modelo;</li>
+            </ul>
+
+            <p>
+                NOTA: O Github não consegue exibir todas as tabelas e gráficos dos pacotes Python. Portanto, o ideal é utilizar alguma IDE para visualizar melhor todos os dados e análise completa. Por exemplo: Jupyter-notebook, Jupyter-lab ou Visual studio code.
+            </p>
+
+
 
         </div>
     </section>
