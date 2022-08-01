@@ -44,6 +44,41 @@ O projeto pode ser executar acessando o link que foi hospedado: <a target="_blan
 > * Ao executar o projeto, ele vai exibir os resultados com as métricas de avaliação `Acurácia` e `F1-Score` e em seguida realizar o `download de um arquivo .csv` contendo as previsões.
 
   
- 
+<h2>COMO VISUALIZAR AS ANÁLISES</h2>
+
+As análises realizadas, explicações de conceitos e metodologia utilizada para o desenvolvimento podem ser visualizadas no diretório(pasta) `notebook/`:
+> **00 - analise.ipynb**: Contém a análise exploratória e estatística inicial do proejeto;<br/>
+> **01 - preparacao.ipynb**: Contém o pré-processamento dos dados, tratamento de outliers, feature selection, modelagem, avaliação dos resultados e deploy do modelo;<br/><br/>
+> **NOTA:** O Github não consegue exibir todas as tabelas e gráficos dos pacotes Python. Portanto, o ideal é utilizar alguma IDE para visualizar melhor todos os dados e análise completa. Por exemplo: `Jupyter-notebook`, `Jupyter-lab` ou `Visual studio code`. 
+
+Sumário das análises:
+
+**PARTE 1 - analise.ipynb**
+> * INTRODUÇÃO
+> * ANÁLISE EXPLORATÓRIA
+> * ANÁLISE UNIVARIADA
+> * ANÁLISE MULTIVARIADA
+
+**PARTE 2 - preparacao.ipynb**
+> * TRATAMENTO DE OUTLIERS BASEADO EM ESTATÍSTICA
+>    * Z-Score
+>    * Amplitude Interquartil
+>
+> * MÉTODOS DE DETECÇÃO DE OUTLIERS MULTIVARIADOS
+> * MÉTODOS DE DETECÇÃO BASEADO EM CLUSTERS
+> * FEATURE SELECTION
+> * DIVISÃO EM TREINO E TESTE
+> * ESCALA DOS DADOS
+> * MODELAGEM BASE
+>    * K Fold
+>    * KNN
+>    * Logistic Regression
+>    * Random Forest
+>    * SVM Classifier
+>    * XGB Classifier
+> * MODELAGEM AUTOMATIZADA
+>    * Avaliando os resultados
+> * EXPORTANDO O MODELO
+> * CONSIDERAÇÕES SOBRE OS RESULTADOS OBTIDOS
 
 
