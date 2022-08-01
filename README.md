@@ -7,7 +7,7 @@ Repositório contendo o teste de avaliação para a vaga de Cientista de Dados J
 
 <h2>INTRODUÇÃO</h2>
 
-Este teste consiste em desenvolver um modelo de aprendizado de máquina capaz de classificar as amostras do conjunto de dados **dataset_cdjr.parquet.gzip**. Disponível em: <https://drive.google.com/file/d/1HXq9mczY-5OpFaXK3kk8zAgFEgEgF3jt/view?usp=sharing>
+Este teste consiste em desenvolver um modelo de aprendizado de máquina capaz de classificar as amostras do conjunto de dados **dataset_cdjr.parquet.gzip**. Disponível em: <a href="https://drive.google.com/file/d/1HXq9mczY-5OpFaXK3kk8zAgFEgEgF3jt/view?usp=sharing">GDrive</a>
 
 É um conjunto de dados pequeno de **466 entradas**, composto inicialmente por **16 features** (feature0, feature1, …, feature 15) e uma coluna target, que é a classe. A coluna target é zero indicando a não ocorrência do evento que desejamos prever e um quando há ocorrência do evento que desejamos prever.
 
@@ -24,8 +24,8 @@ Este teste consiste em desenvolver um modelo de aprendizado de máquina capaz de
 
 > **`webpp/`**: Contém os arquivos do webapp que foi desenvolvido. Arquivos HTML, CSS, Javascript. A integração com o modelo desenvolvido.<br/>
 > `webapp/static/`: Arquivos de Script JS e arquivos de Estilo CSS. Jquery.js, Bootstrap.js, main.js;  <br/>
-> `webapp/templates`: Arquivo index.html do site;<br/>
-> `webapp/tools`: Classe que foi desenvolvida para realizar a integração entre o modelo de Machine Learning e a aplicação web;<br/>
+> `webapp/templates/`: Arquivo index.html do site;<br/>
+> `webapp/tools/`: Classe que foi desenvolvida para realizar a integração entre o modelo de Machine Learning e a aplicação web;<br/>
 > `webapp/main.py`: Arquivo principal para executar o website utilizando Flask;<br/>
 > `webapp/requirements.txt`: Contém os pacotes necessários para instalar, caso deseje executar a aplicação em uma máquina local;<br/>
 > `webapp/runtime.txt`: Versão Python utilizada;<br/>
