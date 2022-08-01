@@ -31,7 +31,7 @@ class Preditor:
         
 
     def predict(self):
-        model = joblib.load('notebook/modelo/modelo-20220731-090438.pkl')
+        model = joblib.load('tools/modelo/modelo-20220731-090438.pkl')
         
         previsoes = model.predict(self.lista_dados)
         
