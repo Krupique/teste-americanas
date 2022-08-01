@@ -114,24 +114,9 @@ $(document).ready(function() {
             atributoTarget = 'no'
         }
 
-        if ($("input[name='metricaAvaliacao']:checked").val() == 'acc') {
-            metricaAvaliacao = 'acc'
-        } else {
-            metricaAvaliacao = 'f1'
-        }
-
-        console.log('Chegou aqui hihi');
-        console.log(atributoTarget);
-        console.log(metricaAvaliacao);
-        var data = {
-            'atributoTarget': atributoTarget,
-            'metricaAvaliacao': metricaAvaliacao
-        }
-        console.log(data)
-
         var fd = new FormData();
         fd.append('atributoTarget', JSON.stringify(atributoTarget));
-        fd.append('metricaAvaliacao', JSON.stringify(metricaAvaliacao));
+        //fd.append('metricaAvaliacao', JSON.stringify(metricaAvaliacao));
         fd.append('listaDados', JSON.stringify(listaDados));
 
         $.ajax({
@@ -147,12 +132,10 @@ $(document).ready(function() {
 
 
                 if (result.result.atributoTarget == 'yes') {
-                    metricaAvaliacao = result.result.metricaAvaliacao == 'acc' ? 'Acurácia' :
-                        result.result.metricaAvaliacao == 'f1' ? 'F1 Score' : 'None';
 
-                    resultado = 'O score final na métrica ' + metricaAvaliacao + ' foi de ' + result.result.score + '%';
-
-                    alert(resultado);
+                    str_html = '<p>Acurácia: ' + result.result.score_acc + '%</p>'
+                    str_html += '<p>F1 Score: ' + result.result.score_f1 + '%</p>'
+                    $('#metricaTexto').html(str_html)
 
                 }
 

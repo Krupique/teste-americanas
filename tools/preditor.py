@@ -3,19 +3,17 @@ import joblib
 import numpy as np
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, Normalizer, StandardScaler, RobustScaler, QuantileTransformer, PowerTransformer, MinMaxScaler
+from sklearn.preprocessing import StandardScaler, RobustScaler, QuantileTransformer, PowerTransformer, MinMaxScaler
 from xgboost import XGBClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
+from sklearn.metrics import accuracy_score, f1_score
 
 
 #Criação da classe
 class Preditor:
 
-    def __init__(self, lista_dados, atributoTarget, metricaAvaliacao):
+    def __init__(self, lista_dados, atributoTarget):
         self.lista_dados = self._transformarDados(lista_dados)
         self.atributoTarget = atributoTarget
-        self.metricaAvaliacao = metricaAvaliacao
-
 
 
     def _transformarDados(self, lista_dados):
@@ -37,13 +35,10 @@ class Preditor:
         
         previsoes = model.predict(self.lista_dados)
         
-        score = 0
+        score_acc = 0
+        score_f1 = 0
         if self.atributoTarget == 'yes':
-            #Faz calculo de validação
-            if self.metricaAvaliacao == 'acc':
-                score = accuracy_score(self.target, previsoes)
-            elif self.metricaAvaliacao == 'f1':
-                score = f1_score(self.target, previsoes)
+            score_acc = accuracy_score(self.target, previsoes)
+            score_f1 = f1_score(self.target, previsoes)
         
-        
-        return previsoes, score
+        return previsoes, score_acc, score_f1

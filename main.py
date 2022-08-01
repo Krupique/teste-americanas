@@ -15,16 +15,17 @@ def index():
 
     if request.method == 'POST':
         atributoTarget = json.loads(request.form.get('atributoTarget'))    
-        metricaAvaliacao = json.loads(request.form.get('metricaAvaliacao'))    
+        #metricaAvaliacao = json.loads(request.form.get('metricaAvaliacao'))    
         listaDados = json.loads(request.form.get('listaDados'))    
 
-        preditor = Preditor(listaDados, atributoTarget, metricaAvaliacao)
-        previsoes, score = preditor.predict()
+        preditor = Preditor(listaDados, atributoTarget)
+        previsoes, score_acc, score_f1 = preditor.predict()
 
         previsoes = json.dumps(previsoes.tolist())
-        score = round(score * 100, 2)
+        score_acc = round(score_acc * 100, 2)
+        score_f1 = round(score_f1 * 100, 2)
 
-        return jsonify(result={'atributoTarget': atributoTarget, 'metricaAvaliacao': metricaAvaliacao, 'previsoes': previsoes, 'score': score})
+        return jsonify(result={'atributoTarget': atributoTarget, 'score_f1': score_f1, 'score_acc': score_acc, 'previsoes': previsoes})
 
 
     return render_template('index.html')
