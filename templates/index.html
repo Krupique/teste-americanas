@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/script/jquery-3.6.0.min.js"></script>
+    <script src="/static/script/bootstrap.min.js"></script>
+    <script src="/static/script/main.js"></script>
+    <link href="/static/style/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/style/style.css" rel="stylesheet">
+    <title>Americanas SA</title>
+</head>
+
+<body>
+    <section class="secTitle">
+        <div>
+            <p>Teste Técnico - Americanas SA</p>
+        </div>
+    </section>
+
+    <section class="secBody">
+        <div class="container">
+
+            <div id="divUpload">
+
+
+                <div id="uploadText">
+                    <p>Cole o texto em formato .CSV (Separado por vígula ou ponto e vírgula)</p>
+                    <textarea id="textArea"></textarea>
+                </div>
+
+                <div id="uploadOr">
+                    <p>
+                        ou
+                    </p>
+                </div>
+
+                <div id="uploadFile">
+                    <p>Selecione o arquivo .CSV com ou sem o atributo target</p>
+                    <input type="file" class="form-control" id="file" name="file" />
+                </div>
+
+            </div>
+
+            <div>
+                <div style="width: 20%; margin: auto;">
+                    <input type="button" class="form-control" id="btnImportar" value="Importar Dados" />
+                </div>
+            </div>
+
+            <hr/>
+            <div style="text-align: center;">
+                <p>Tabela com os Dados</p>
+            </div>
+
+            <div id="divTable">
+
+            </div>
+
+
+            <hr/>
+            <div style="text-align: center;">
+                <p>Opções de Testagem</p>
+            </div>
+
+            <div id="divTest">
+
+                <div id="divTarget">
+                    <p>Considerar o atributo target?</p>
+                    <input type="radio" id="targetSim" name="atributoTarget" value="yes" checked>
+                    <label for="targetSim">Sim</label><br>
+                    <input type="radio" id="targetNao" name="atributoTarget" value="no">
+                    <label for="targetNao">Não</label><br>
+                </div>
+
+                <div id="divMetrica">
+                    <p>Selecione a Métrica para avaliação</p>
+                    <input type="radio" id="metrica1" name="metricaAvaliacao" value="acc" checked>
+                    <label for="metrica1">Acurácia</label><br>
+                    <input type="radio" id="metrica2" name="metricaAvaliacao" value="f1">
+                    <label for="metrica2">F1 Score</label><br>
+                </div>
+
+                <div id="divExecutar">
+                    <input type="button" class="form-control" id="btnExecutar" value="Executar" />
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
